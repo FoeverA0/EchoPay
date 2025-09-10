@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Header() {
   return (
     <header className="main-header">
@@ -9,15 +12,25 @@ export default function Header() {
             <div className="d-flex justify-content-between align-items-center flex-wrap">
               <div className="logo-box">
                 <div className="logo">
-                  <a href="/">
-                    <img src="/assets/images/logo.png" alt="Logo" />
-                  </a>
+                  <Link href="/" legacyBehavior>
+                    <a>
+                      <Image src="/assets/images/logo.png" alt="Logo" width={610} height={100} priority />
+                    </a>
+                  </Link>
                 </div>
               </div>
               <nav className="main-menu">
                 <ul className="navigation clearfix">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">Team</a></li>
+                  <li>
+                    <Link href="/" legacyBehavior>
+                      <a>Home</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about" legacyBehavior>
+                      <a>Team</a>
+                    </Link>
+                  </li>
                 </ul>
               </nav>
               <div className="mobile-nav-toggler">
@@ -32,7 +45,13 @@ export default function Header() {
         <div className="menu-backdrop"></div>
         <div className="close-btn"><span className="icon fa-solid fa-xmark fa-fw"></span></div>
         <nav className="menu-box">
-          <div className="nav-logo"><a href="/"><img src="/assets/images/mobile-logo.png" alt="Mobile Logo" /></a></div>
+          <div className="nav-logo">
+            <Link href="/" legacyBehavior>
+              <a>
+                <Image src="/assets/images/mobile-logo.png" alt="Mobile Logo" width={120} height={40} />
+              </a>
+            </Link>
+          </div>
           <div className="menu-outer"></div>
         </nav>
       </div>

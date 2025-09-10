@@ -3,23 +3,21 @@
 
 import { useState } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Spline from '@splinetool/react-spline';
+import Image from "next/image";
+
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="page-wrapper">
       <Header />
       {/* Banner One */}
-      <section className="banner-one">
+      <section className="banner-one" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
         <div className="robot">
-          <script
-            type="module"
-            dangerouslySetInnerHTML={{
-              __html: `
-                import 'https://unpkg.com/@splinetool/viewer@1.3.5/build/spline-viewer.js';
-              `,
-            }}
+          <Spline
+            scene="https://prod.spline.design/AqtlWJlNbO-ZMkvz/scene.splinecode" 
           />
-          <spline-viewer url="https://prod.spline.design/AqtlWJlNbO-ZMkvz/scene.splinecode"></spline-viewer>
         </div>
         <div className="auto-container">
           <div className="banner-one_content">
@@ -34,7 +32,7 @@ export default function Home() {
                 aria-label="Launch Echo"
                 onClick={() => setModalOpen(true)}
               >
-                Launch Echo <img alt="New Window" width={16} height={16} src="/assets/images/icons/icon-1.png" />
+                Launch Echo <Image alt="New Window" width={16} height={16} src="/assets/images/icons/icon-1.png" />
               </button>
             </div>
           </div>
@@ -93,14 +91,14 @@ export default function Home() {
         <div className="auto-container">
           <div className="sec-title">
             <h2 className="sec-title_heading">Services</h2>
-            <div className="sec-title_icon"><img src="/assets/images/icons/icon-1.png" alt="" /></div>
+            <div className="sec-title_icon"><Image src="/assets/images/icons/icon-1.png" alt="" width={32} height={32} /></div>
           </div>
           <div className="row clearfix">
             <div className="service-block_one col-lg-6 col-md-6 col-sm-12">
               <div className="service-block_one-inner d-flex justify-content-between align-items-center flex-wrap">
                 <h3 className="service-block_one-heading">Trusted AI Payments</h3>
                 <div className="service-block_one-icon">
-                  <img src="/assets/images/icons/service-1.png" alt="" />
+                  <Image src="/assets/images/icons/service-1.png" alt="Service 1" width={48} height={48} />
                 </div>
               </div>
             </div>
@@ -108,7 +106,7 @@ export default function Home() {
               <div className="service-block_one-inner d-flex justify-content-between align-items-center flex-wrap">
                 <h3 className="service-block_one-heading">Decentralized Verification</h3>
                 <div className="service-block_one-icon">
-                  <img src="/assets/images/icons/service-2.png" alt="" />
+                  <Image src="/assets/images/icons/service-2.png" alt="Service 2" width={48} height={48} />
                 </div>
               </div>
             </div>
@@ -116,7 +114,7 @@ export default function Home() {
               <div className="service-block_one-inner d-flex justify-content-between align-items-center flex-wrap">
                 <h3 className="service-block_one-heading">Transparent Compliance</h3>
                 <div className="service-block_one-icon">
-                  <img src="/assets/images/icons/service-3.png" alt="" />
+                  <Image src="/assets/images/icons/service-3.png" alt="Service 3" width={48} height={48} />
                 </div>
               </div>
             </div>
@@ -124,7 +122,7 @@ export default function Home() {
               <div className="service-block_one-inner d-flex justify-content-between align-items-center flex-wrap">
                 <h3 className="service-block_one-heading">Seamless Integration</h3>
                 <div className="service-block_one-icon">
-                  <img src="/assets/images/icons/service-4.png" alt="" />
+                  <Image src="/assets/images/icons/service-4.png" alt="Service 4" width={48} height={48} />
                 </div>
               </div>
             </div>
@@ -137,7 +135,7 @@ export default function Home() {
         <div className="auto-container">
           <div className="sec-title">
             <h2 className="sec-title_heading">Stats</h2>
-            <div className="sec-title_icon"><img src="/assets/images/icons/icon-4.png" alt="" /></div>
+            <div className="sec-title_icon"><Image src="/assets/images/icons/icon-4.png" alt="" width={32} height={32} /></div>
           </div>
           <div className="inner-container">
             <div className="clearfix">
@@ -196,75 +194,43 @@ export default function Home() {
           </div>
           <div className="partners-row partners-row-1">
             <div className="partner-card partner-card--primary partner-card--gold">
-              <img alt="HKSTP" width={160} height={60} src="/assets/images/HKSTP.png" />
+              <Image alt="HKSTP" width={160} height={60} src="/assets/images/HKSTP.png" />
             </div>
           </div>
           <div className="partners-row partners-row-2">
             <div className="partner-card partner-card--silver">
-              <img alt="AWS" width={160} height={60} src="/assets/images/aws.png" />
+              <Image alt="AWS" width={160} height={60} src="/assets/images/aws.png" />
             </div>
             <div className="partner-card partner-card--silver">
-              <img alt="Phala Network" width={160} height={60} src="/assets/images/phala.png" />
+              <Image alt="Phala Network" width={160} height={60} src="/assets/images/phala.png" />
             </div>
           </div>
           <div className="partners-divider"><span>Academic Excellence</span></div>
           <div className="partners-row partners-row-3">
             <div className="partner-card">
-              <img alt="NTU" width={160} height={60} src="/assets/images/academic/NTU.png" />
+              <Image alt="NTU" width={160} height={60} src="/assets/images/academic/NTU.png" />
             </div>
             <div className="partner-card">
-              <img alt="PolyU" width={160} height={60} src="/assets/images/academic/POLYU.png" />
+              <Image alt="PolyU" width={160} height={60} src="/assets/images/academic/POLYU.png" />
             </div>
             <div className="partner-card">
-              <img alt="ZJU" width={160} height={60} src="/assets/images/academic/ZJU.png" />
+              <Image alt="ZJU" width={160} height={60} src="/assets/images/academic/ZJU.png" />
             </div>
             <div className="partner-card">
-              <img alt="BU" width={160} height={60} src="/assets/images/academic/BU.png" />
+              <Image alt="BU" width={160} height={60} src="/assets/images/academic/BU.png" />
             </div>
             <div className="partner-card">
-              <img alt="CUHK" width={160} height={60} src="/assets/images/academic/CUHK.png" />
+              <Image alt="CUHK" width={160} height={60} src="/assets/images/academic/CUHK.png" />
             </div>
             <div className="partner-card">
-              <img alt="HKUST" width={160} height={60} src="/assets/images/academic/UST.png" />
+              <Image alt="HKUST" width={160} height={60} src="/assets/images/academic/UST.png" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Footer */}
-      <footer className="main-footer">
-        <div className="auto-container">
-          <div className="widgets-section">
-            <div className="row clearfix">
-              <div className="footer-column col-lg-8 col-md-12 col-sm-12">
-                <h2>Contact us! <a href="mailto:sunny.shen.connect@gmail.com">sunny.shen.connect@gmail.com</a></h2>
-                <ul className="footer_socials">
-                  <li><a href="https://x.com/EchoProtocolLab">X <i className="fa-solid fa-arrow-right fa-fw"></i></a></li>
-                  <li><a href="https://t.me/+SyOcf1xek1xhZjE1">Telegram <i className="fa-solid fa-arrow-right fa-fw"></i></a></li>
-                  <li><a href="https://discord.gg/yNgbC9EBrh">Discord <i className="fa-solid fa-arrow-right fa-fw"></i></a></li>
-                  <li><a href="https://www.linkedin.com/company/martxofficial">Linkedin <i className="fa-solid fa-arrow-right fa-fw"></i></a></li>
-                </ul>
-              </div>
-              <div className="footer-column col-lg-4 col-md-12 col-sm-12">
-                <ul className="footer_navs">
-                  <li><a href="/">Home <i className="fa-solid fa-arrow-right fa-fw"></i></a></li>
-                  <li><a href="/about">Team <i className="fa-solid fa-arrow-right fa-fw"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <div className="auto-container">
-            <div className="d-flex justify-content-between align-items-center flex-wrap">
-              <div className="footer_copyright">&copy; 2025 Echo Protocol  -  Made by MartX Limited</div>
-              <a className="backtop down-box scroll-to-target" data-target=".page-wrapper">
-                <i className="fa-solid fa-arrow-up"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+  {/* Main Footer */}
+  <Footer />
     </div>
   );
 }
